@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: false,
+})
+
+module.exports = withBundleAnalyzer({
+  reactStrictMode: true,
   experimental: {
     appDir: true,
+  },  
+  images: {
+    domains: ['tailwindcss.com', 'res.cloudinary.com'],
   },
-}
+})
 
-module.exports = nextConfig

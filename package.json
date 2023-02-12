@@ -3,22 +3,57 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && next lint",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch",
+    "type-check": "tsc"
   },
+  "pre-commit": [
+    "build",
+    "lint",
+    "type-check"
+  ],
   "dependencies": {
+    "@auth0/auth0-react": "^1.9.0",
+    "@lottiefiles/react-lottie-player": "^3.4.7",
+    "@next/bundle-analyzer": "^13.1.1",
     "@next/font": "13.1.6",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
+    "@sentry/nextjs": "^7.23.0",
+    "@tailwindcss/forms": "^0.4.1",
+    "@types/lodash": "^4.14.184",
+    "@types/react-transition-group": "^4.4.5",
+    "@types/mixpanel-browser": "^2.38.1",
     "@types/react-dom": "18.0.10",
-    "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6",
+    "lodash": "^4.17.21",
+    "luxon": "^2.4.0",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-flatpickr": "^3.10.13",
     "react-query": "^3.39.3",
-    "typescript": "4.9.5"
+    "react-share": "^4.4.0",
+    "react-toastify": "^9.0.3",
+    "react-transition-group": "^4.4.2"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^13.1.6",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@types/jest": "^29.4.0",
+    "@types/luxon": "^3.2.0",
+    "@types/node": "18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-transition-group": "^4.4.4",
+    "autoprefixer": "10.4.5",
+    "eslint": "7",
+    "eslint-config-next": "12.0.4",
+    "jest": "28.1.0",
+    "postcss": "^8.4.21",
+    "pre-commit": "^1.2.2",
+    "sass": "^1.57.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "4.9.5",
+    "webpack": "^5.73.0"
   }
 }
