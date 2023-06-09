@@ -1,0 +1,15 @@
+overwrite: true
+schema: "../kino-backend/kino/graphql/schema.graphql" #TODO This won't work if the backend repository is move somewhere else.
+documents: "src/**/*.gql"
+hooks:
+  afterOneFileWrite:
+    - eslint --fix
+
+generates:
+  "src/graphql/generated.ts":
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      exposeQueryKeys: true
